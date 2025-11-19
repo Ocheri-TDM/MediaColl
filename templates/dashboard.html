@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMedia Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <section class="view">
+        <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-bolt" style="color: var(--primary-green);"></i>
+            <div><span>NeuroMedia</span><span class="logo-subtitle">Education Media Platform</span></div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="./dashboard.html" class="nav-link active"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="./media.html" class="nav-link"><i class="fa-solid fa-photo-film"></i><span>Media Library</span></a></li>
+            <li class="nav-item"><a href="./media-chat.html" class="nav-link"><i class="fa-regular fa-comments"></i><span>AI Media Chat</span></a></li>
+            <li class="nav-item"><a href="./ai-video.html" class="nav-link"><i class="fa-solid fa-scissors"></i><span>AI Video Trimmer</span></a></li>
+            <li class="nav-item"><a href="./ai-chat.html" class="nav-link"><i class="fa-solid fa-robot"></i><span>AI Chatbot</span></a></li>
+            <li class="nav-item"><a href="./computer-v.html" class="nav-link"><i class="fa-regular fa-eye"></i><span>Computer Vision</span></a></li>
+            <li class="nav-item"><a href="./world-skils.html" class="nav-link"><i class="fa-solid fa-trophy"></i><span>WorldSkills</span></a></li>
+        </ul>
+        <div class="user-profile">
+            <img src="https://i.pravatar.cc/100?img=33" alt="User" class="avatar">
+            <div class="user-info"><h4>John Doe</h4><p>Student</p></div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header>
+            <div class="header-title">
+                <h1>Dashboard</h1>
+                <p>Welcome back, manage your media content</p>
+            </div>
+            <button class="btn-primary">
+                <i class="fa-solid fa-cloud-arrow-up"></i> Upload Media
+            </button>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon bg-green"><i class="fa-regular fa-images"></i></div>
+                    <span class="badge badge-green">+12%</span>
+                </div>
+                <div>
+                    <div class="stat-value">1,248</div>
+                    <div class="stat-label">Total Media Files</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon bg-blue"><i class="fa-solid fa-video"></i></div>
+                    <span class="badge badge-blue">+8%</span>
+                </div>
+                <div>
+                    <div class="stat-value">342</div>
+                    <div class="stat-label">Videos Processed</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon bg-purple"><i class="fa-regular fa-comments"></i></div>
+                    <span class="badge badge-purple">+24%</span>
+                </div>
+                <div>
+                    <div class="stat-value">856</div>
+                    <div class="stat-label">AI Interactions</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon bg-orange"><i class="fa-regular fa-eye"></i></div>
+                    <span class="badge badge-orange">+16%</span>
+                </div>
+                <div>
+                    <div class="stat-value">2,145</div>
+                    <div class="stat-label">Vision Analysis</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            
+            <div class="card-container">
+                <h3 class="section-title">Recent Activity</h3>
+                <div class="activity-list">
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon bg-green"><i class="fa-solid fa-upload"></i></div>
+                        <div class="activity-details">
+                            <h5>New video uploaded</h5>
+                            <p>campus_event_2024.mp4</p>
+                        </div>
+                        <span class="activity-time">2 min ago</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon bg-blue"><i class="fa-solid fa-scissors"></i></div>
+                        <div class="activity-details">
+                            <h5>Video trimmed successfully</h5>
+                            <p>interview_final.mp4</p>
+                        </div>
+                        <span class="activity-time">15 min ago</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon bg-purple"><i class="fa-solid fa-robot"></i></div>
+                        <div class="activity-details">
+                            <h5>AI generated media content</h5>
+                            <p>Generated 3 variations</p>
+                        </div>
+                        <span class="activity-time">1 hour ago</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon bg-orange"><i class="fa-regular fa-eye"></i></div>
+                        <div class="activity-details">
+                            <h5>Vision analysis completed</h5>
+                            <p>Detected 12 objects, 4 faces</p>
+                        </div>
+                        <span class="activity-time">3 hours ago</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon bg-blue"><i class="fa-solid fa-scissors"></i></div>
+                        <div class="activity-details">
+                            <h5>Video trimmed successfully</h5>
+                            <p>interview_final.mp4</p>
+                        </div>
+                        <span class="activity-time">15 min ago</span>
+                    </div>
+                    
+                     <div class="activity-item">
+                        <div class="activity-icon bg-purple"><i class="fa-solid fa-robot"></i></div>
+                        <div class="activity-details">
+                            <h5>AI generated media content</h5>
+                            <p>Generated 3 variations</p>
+                        </div>
+                        <span class="activity-time">1 hour ago</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" style="height: auto; align-self: start;">
+                <h3 class="section-title">Quick Actions</h3>
+                <div class="quick-actions">
+                    <button class="action-btn primary">
+                        <i class="fa-solid fa-upload"></i> Upload Media
+                    </button>
+                    <button class="action-btn">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate with AI
+                    </button>
+                    <button class="action-btn">
+                        <i class="fa-solid fa-scissors"></i> Trim Video
+                    </button>
+                    <button class="action-btn">
+                        <i class="fa-regular fa-eye"></i> Analyze Media
+                    </button>
+                </div>
+
+                <div class="storage-widget">
+                    <div class="storage-header">
+                        <span>Storage Usage</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="storage-text">6.8 GB of 10 GB used</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    </section>
+    <div class="sidebar-handle" id="sidebar-btn"></div>
+
+<script>
+    const sidebar = document.getElementById("sidebar");
+const btn = document.getElementById("sidebar-btn");
+
+btn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+</script>
+
+</body>
+</html>

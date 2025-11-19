@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMedia - Media Library</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/media.css">
+</head>
+<body>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-bolt" style="color: var(--primary-green);"></i>
+            <div><span>NeuroMedia</span><span class="logo-subtitle">Education Media Platform</span></div>
+        </div>
+        <ul class="nav-menu">
+           <li class="nav-item"><a href="./dashboard.html" class="nav-link active"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="./media.html" class="nav-link"><i class="fa-solid fa-photo-film"></i><span>Media Library</span></a></li>
+            <li class="nav-item"><a href="./media-chat.html" class="nav-link"><i class="fa-regular fa-comments"></i><span>AI Media Chat</span></a></li>
+            <li class="nav-item"><a href="./ai-video.html" class="nav-link"><i class="fa-solid fa-scissors"></i><span>AI Video Trimmer</span></a></li>
+            <li class="nav-item"><a href="./ai-chat.html" class="nav-link"><i class="fa-solid fa-robot"></i><span>AI Chatbot</span></a></li>
+            <li class="nav-item"><a href="./computer-v.html" class="nav-link"><i class="fa-regular fa-eye"></i><span>Computer Vision</span></a></li>
+            <li class="nav-item"><a href="./world-skils.html" class="nav-link"><i class="fa-solid fa-trophy"></i><span>WorldSkills</span></a></li>
+        </ul>
+        <div class="user-profile">
+            <img src="https://i.pravatar.cc/100?img=33" alt="User" class="avatar">
+            <div class="user-info"><h4>John Doe</h4><p>Student</p></div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header>
+            <div class="header-title">
+                <h1>Media Library</h1>
+                <p>Browse and manage your media files</p>
+            </div>
+            <button class="btn-primary"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Media</button>
+        </header>
+
+        <div class="toolbar">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="search-input" placeholder="Search media files...">
+            </div>
+            <div class="filter-actions">
+                <button class="dropdown">All Types <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></button>
+                <button class="dropdown">Recent <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></button>
+                <button class="icon-btn green"><i class="fa-solid fa-question"></i></button>
+                <button class="icon-btn"><i class="fa-solid fa-list"></i></button>
+            </div>
+        </div>
+
+        <div class="media-grid">
+            
+            <div class="media-card">
+                <div class="card-preview">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=60" class="card-img" alt="Campus">
+                    <span class="badge badge-image">Image</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">campus_main.jpg</div>
+                        <div class="file-meta">2.4 MB • 2 days ago</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="color-tag"></div>
+                        <div class="delete-btn"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="card-preview">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=60" class="card-img" alt="Library">
+                    <span class="badge badge-video">Video</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">library_tour.mp4</div>
+                        <div class="file-meta">45.8 MB • 5 days ago</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="color-tag" style="background: transparent;"></div> <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="card-preview">
+                    <div class="logo-placeholder">
+                        <div class="logo-box">NM</div>
+                    </div>
+                    <span class="badge badge-logo">Logo</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">neuromedia_logo.svg</div>
+                        <div class="file-meta">124 KB • 1 week ago</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="color-tag" style="background: transparent;"></div>
+                        <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="card-preview">
+                    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=500&q=60" class="card-img" alt="Sports">
+                    <span class="badge badge-image">Image</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">sports_day.jpg</div>
+                        <div class="file-meta">3.2 MB • 3 days ago</div>
+                    </div>
+                    <div class="card-footer">
+                         <div class="color-tag" style="background: transparent;"></div>
+                         <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="media-card">
+                <div class="card-preview">
+                    <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?auto=format&fit=crop&w=500&q=60" class="card-img" alt="Sports">
+                    <span class="badge badge-image">Image</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">sports_day_final.jpg</div>
+                        <div class="file-meta">3.5 MB • 3 days ago</div>
+                    </div>
+                    <div class="card-footer">
+                         <div class="color-tag" style="background: transparent;"></div>
+                         <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="card-preview">
+                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=500&q=60" class="card-img" alt="Graduation">
+                    <span class="badge badge-video">Video</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">graduation_2024.mp4</div>
+                        <div class="file-meta">128 MB • 1 week ago</div>
+                    </div>
+                    <div class="card-footer">
+                         <div class="color-tag" style="background: transparent;"></div>
+                         <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="media-card">
+                <div class="card-preview">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=60" class="card-img" alt="Lab">
+                    <span class="badge badge-image">Image</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">lab_session.jpg</div>
+                        <div class="file-meta">4.1 MB • 4 days ago</div>
+                    </div>
+                    <div class="card-footer">
+                         <div class="color-tag" style="background: transparent;"></div>
+                         <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="card-preview">
+                    <div class="logo-placeholder">
+                        <div class="logo-box">NM</div>
+                    </div>
+                    <span class="badge badge-logo">Logo</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">neuromedia_logo.svg</div>
+                        <div class="file-meta">124 KB • 1 week ago</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="color-tag" style="background: transparent;"></div>
+                        <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="media-card">
+                <div class="card-preview">
+                    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=500&q=60" class="card-img" alt="Sports">
+                    <span class="badge badge-image">Image</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="file-name">sports_day.jpg</div>
+                        <div class="file-meta">3.2 MB • 3 days ago</div>
+                    </div>
+                    <div class="card-footer">
+                         <div class="color-tag" style="background: transparent;"></div>
+                         <div class="delete-btn" style="background: transparent; color: #ccc;"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+<div class="sidebar-handle" id="sidebar-btn"></div>
+
+<script>
+    const sidebar = document.getElementById("sidebar");
+const btn = document.getElementById("sidebar-btn");
+
+btn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+</script>
+</body>
+</html>

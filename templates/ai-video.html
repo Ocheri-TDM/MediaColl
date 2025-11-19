@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMedia - Video Trimmer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ai-video.css">
+</head>
+<body>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-bolt" style="color: var(--primary-green);"></i>
+            <div>
+                <span>NeuroMedia</span>
+                <span class="logo-subtitle">Education Media Platform</span>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="./dashboard.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="./media.html" class="nav-link"><i class="fa-solid fa-photo-film"></i><span>Media Library</span></a></li>
+            <li class="nav-item"><a href="./media-chat.html" class="nav-link"><i class="fa-regular fa-comments"></i><span>AI Media Chat</span></a></li>
+            <li class="nav-item"><a href="./ai-video.html" class="nav-link active"><i class="fa-solid fa-scissors"></i><span>AI Video Trimmer</span></a></li>
+            <li class="nav-item"><a href="./ai-chat.html" class="nav-link"><i class="fa-solid fa-robot"></i><span>AI Chatbot</span></a></li>
+            <li class="nav-item"><a href="./computer-v.html" class="nav-link"><i class="fa-regular fa-eye"></i><span>Computer Vision</span></a></li>
+            <li class="nav-item"><a href="./world-skils.html" class="nav-link"><i class="fa-solid fa-trophy"></i><span>WorldSkills</span></a></li>
+        </ul>
+        <div class="user-profile">
+            <img src="https://i.pravatar.cc/100?img=33" alt="User" class="avatar">
+            <div class="user-info"><h4>John Doe</h4><p>Student</p></div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <header class="page-header">
+            <h2>AI Video Trimmer</h2>
+            <p>Edit your video like you want</p>
+        </header>
+
+        <div class="workspace">
+            
+            <div class="video-column">
+                <h3 class="video-title">Video input</h3>
+                <div class="video-preview-box">
+                    <i class="fa-solid fa-play play-icon"></i>
+                    <span class="preview-text">Video Preview<br>Upload a video to start editing</span>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-upload"><i class="fa-solid fa-upload"></i> Upload Video</button>
+                    <button class="btn btn-delete"><i class="fa-solid fa-trash"></i> Delete Video</button>
+                </div>
+            </div>
+
+            <div class="video-column">
+                <h3 class="video-title">Video output</h3>
+                <div class="video-preview-box">
+                    <i class="fa-solid fa-play play-icon"></i>
+                    <span class="preview-text">Video Preview<br>Upload a video to start editing</span>
+                </div>
+                <div class="output-actions">
+                    <button class="btn btn-export"><i class="fa-solid fa-download"></i> Export</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="prompt-area">
+            <button class="icon-btn"><i class="fa-solid fa-paperclip"></i></button>
+            <textarea class="prompt-input" placeholder="Ask me anything or describe what you want to edit in video..."></textarea>
+            <button class="icon-btn send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+
+    </main>
+<div class="sidebar-handle" id="sidebar-btn"></div>
+
+<script>
+    const sidebar = document.getElementById("sidebar");
+const btn = document.getElementById("sidebar-btn");
+
+btn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+</script>
+</body>
+</html>

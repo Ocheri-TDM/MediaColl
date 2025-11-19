@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMedia - WorldSkills Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/world-skils.css">
+</head>
+<body>
+
+    <nav class="sidebar"  id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-bolt" style="color: var(--primary-green);"></i>
+            <div>
+                <span>NeuroMedia</span>
+                <span class="logo-subtitle">Education Media Platform</span>
+            </div>
+        </div>
+        <ul class="nav-menu">
+           <li class="nav-item"><a href="./dashboard.html" class="nav-link active"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="./media.html" class="nav-link"><i class="fa-solid fa-photo-film"></i><span>Media Library</span></a></li>
+            <li class="nav-item"><a href="./media-chat.html" class="nav-link"><i class="fa-regular fa-comments"></i><span>AI Media Chat</span></a></li>
+            <li class="nav-item"><a href="./ai-video.html" class="nav-link"><i class="fa-solid fa-scissors"></i><span>AI Video Trimmer</span></a></li>
+            <li class="nav-item"><a href="./ai-chat.html" class="nav-link"><i class="fa-solid fa-robot"></i><span>AI Chatbot</span></a></li>
+            <li class="nav-item"><a href="./computer-v.html" class="nav-link"><i class="fa-regular fa-eye"></i><span>Computer Vision</span></a></li>
+            <li class="nav-item"><a href="./world-skils.html" class="nav-link"><i class="fa-solid fa-trophy"></i><span>WorldSkills</span></a></li>
+        </ul>
+        <div class="user-profile">
+            <img src="https://i.pravatar.cc/100?img=33" alt="User" class="avatar">
+            <div class="user-info"><h4>John Doe</h4><p>Student</p></div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <header class="chat-header">
+            <h2>WorldSkills Assistant</h2>
+            <p>Generate media, get answers, and create content about WorldSkills with AI</p>
+        </header>
+
+        <div class="chat-feed">
+            
+            <div class="message-row ai">
+                <div class="ai-avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="msg-content">
+                    <div class="bubble">
+                        Hello! I'm your AI media assistant. I can help you generate images, edit videos, answer questions, and more. What would you like to create today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-row user">
+                <div class="msg-content">
+                    <div class="bubble">
+                        Can you create a logo for our college tech club?
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-row ai">
+                <div class="ai-avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="msg-content">
+                    <div class="bubble" style="background: transparent; padding: 0; box-shadow: none;">
+                        I'd be happy to help you create a logo! Here are some design options for your tech club:
+                    </div>
+                    
+                    <div class="options-grid">
+                        <div class="option-card">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div class="option-card">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="helper-text">
+                        Click on any design to download or edit further.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="input-wrapper">
+            <button class="icon-btn"><i class="fa-solid fa-paperclip"></i></button>
+            <div class="chat-input-box">
+                <input type="text" placeholder="Ask me anything or describe what you want to create...">
+                <button class="icon-btn send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+    </main>
+<div class="sidebar-handle" id="sidebar-btn"></div>
+
+<script>
+    const sidebar = document.getElementById("sidebar");
+const btn = document.getElementById("sidebar-btn");
+
+btn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+</script>
+</body>
+</html>

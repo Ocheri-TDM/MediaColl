@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMedia - Computer Vision</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/comp-v.css">
+</head>
+<body>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-bolt" style="color: var(--primary-green);"></i>
+            <div>
+                <span>NeuroMedia</span>
+                <span class="logo-subtitle">Education Media Platform</span>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="./dashboard.html" class="nav-link active"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="./media.html" class="nav-link"><i class="fa-solid fa-photo-film"></i><span>Media Library</span></a></li>
+            <li class="nav-item"><a href="./media-chat.html" class="nav-link"><i class="fa-regular fa-comments"></i><span>AI Media Chat</span></a></li>
+            <li class="nav-item"><a href="./ai-video.html" class="nav-link"><i class="fa-solid fa-scissors"></i><span>AI Video Trimmer</span></a></li>
+            <li class="nav-item"><a href="./ai-chat.html" class="nav-link"><i class="fa-solid fa-robot"></i><span>AI Chatbot</span></a></li>
+            <li class="nav-item"><a href="./computer-v.html" class="nav-link"><i class="fa-regular fa-eye"></i><span>Computer Vision</span></a></li>
+            <li class="nav-item"><a href="./world-skils.html" class="nav-link"><i class="fa-solid fa-trophy"></i><span>WorldSkills</span></a></li>
+        </ul>
+        <div class="user-profile">
+            <img src="https://i.pravatar.cc/100?img=33" alt="User" class="avatar">
+            <div class="user-info"><h4>John Doe</h4><p>Student</p></div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <header class="page-header">
+            <h2>Computer Vision</h2>
+            <p>Upload your foto and AI will analyze people on it</p>
+        </header>
+
+        <div class="vision-container">
+            
+            <div class="preview-area">
+                <div class="photo-placeholder">
+                    <i class="fa-solid fa-image"></i> <span>Foto Preview<br>Upload a foto to start analyze</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-upload"><i class="fa-solid fa-upload"></i> Upload Foto</button>
+                    <button class="btn btn-delete"><i class="fa-solid fa-trash"></i> Delete Foto</button>
+                </div>
+            </div>
+
+            <div class="analysis-wrapper">
+                <div class="robot-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="analysis-box">
+                    Here will be analyze of your foto....
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom-input-container">
+            <div class="input-bar">
+                <button class="icon-btn"><i class="fa-solid fa-paperclip"></i></button>
+                <input type="text" class="input-field" placeholder="Ask me anything or describe what you want to create...">
+                <button class="icon-btn send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+    </main>
+<div class="sidebar-handle" id="sidebar-btn"></div>
+
+<script>
+    const sidebar = document.getElementById("sidebar");
+const btn = document.getElementById("sidebar-btn");
+
+btn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+</script>
+</body>
+</html>
