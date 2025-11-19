@@ -23,7 +23,7 @@
         }
 
         /* --- SIDEBAR (Ваш код без изменений) --- */
-        .sidebar {
+       .sidebar {
             width: 260px;
             background: var(--sidebar-bg);
             display: flex;
@@ -32,20 +32,30 @@
             border-right: 1px solid var(--border-color);
             flex-shrink: 0;
             transition: all 0.3s ease;
+            z-index: 200;
         }
-        .logo { font-size: 22px; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 10px; }
+
+        .logo { font-size: 22px; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 10px; overflow: hidden; white-space: nowrap; }
         .logo span { color: var(--primary-green); }
         .logo-subtitle { font-size: 11px; color: var(--text-gray); font-weight: 400; display: block; margin-top: 2px; }
+        
         .nav-menu { list-style: none; flex-grow: 1; }
         .nav-item { margin-bottom: 8px; }
-        .nav-link { display: flex; align-items: center; padding: 12px 15px; text-decoration: none; color: var(--text-gray); border-radius: 10px; font-weight: 500; transition: 0.2s; font-size: 14px; }
-        .nav-link i { width: 25px; margin-right: 10px; }
+        
+        .nav-link { 
+            display: flex; align-items: center; padding: 12px 15px; 
+            text-decoration: none; color: var(--text-gray); border-radius: 10px; 
+            font-weight: 500; transition: 0.2s; font-size: 14px; white-space: nowrap; 
+        }
+        .nav-link i { width: 25px; margin-right: 10px; font-size: 18px; flex-shrink: 0; }
         .nav-link:hover { background-color: #f5f5f5; color: var(--text-dark); }
         .nav-link.active { background-color: var(--primary-green); color: white; box-shadow: 0 4px 12px rgba(0, 194, 146, 0.3); }
-        .user-profile { display: flex; align-items: center; padding-top: 20px; border-top: 1px solid var(--border-color); }
-        .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 12px; }
-        .user-info h4 { font-size: 14px; font-weight: 600; }
-        .user-info p { font-size: 12px; color: var(--text-gray); }
+        
+        .user-profile { display: flex; align-items: center; padding-top: 20px; border-top: 1px solid var(--border-color); overflow: hidden; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 12px; flex-shrink: 0; }
+        .user-info h4 { font-size: 14px; font-weight: 600; white-space: nowrap; }
+        .user-info p { font-size: 12px; color: var(--text-gray); white-space: nowrap; }
+
 
         /* --- MAIN CONTENT --- */
         .main-content {

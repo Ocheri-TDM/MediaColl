@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,6 +8,8 @@
     <link rel="stylesheet" href="../css/ai-chat.css">
 </head>
 <body>
+
+    <div class="sidebar-handle" id="sidebar-btn"><i class="fa-solid fa-chevron-right"></i></div>
 
     <nav class="sidebar" id="sidebar">
         <div class="logo">
@@ -22,7 +23,7 @@
             <li class="nav-item"><a href="./dashboard.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
             <li class="nav-item"><a href="./media.html" class="nav-link"><i class="fa-solid fa-photo-film"></i><span>Media Library</span></a></li>
             <li class="nav-item"><a href="./media-chat.html" class="nav-link"><i class="fa-regular fa-comments"></i><span>AI Media Chat</span></a></li>
-            <li class="nav-item"><a href="./ai-video.html" class="nav-link"><i class="fa-solid fa-scissors"></i><span>AI Video Trimmer</span></a></li>
+            <li class="nav-item"><a href="./ai-video.html" class="nav-link "><i class="fa-solid fa-scissors"></i><span>AI Video Trimmer</span></a></li>
             <li class="nav-item"><a href="./ai-chat.html" class="nav-link active"><i class="fa-solid fa-robot"></i><span>AI Chatbot</span></a></li>
             <li class="nav-item"><a href="./computer-v.html" class="nav-link"><i class="fa-regular fa-eye"></i><span>Computer Vision</span></a></li>
             <li class="nav-item"><a href="./world-skils.html" class="nav-link"><i class="fa-solid fa-trophy"></i><span>WorldSkills</span></a></li>
@@ -34,39 +35,136 @@
     </nav>
 
     <main class="main-content">
-        
         <header class="page-header">
             <h2>AI Chatbot</h2>
-            <p>Generate media, get answers, and create content with AI</p>
+            <p>Ask me anything about the college</p>
         </header>
 
         <div class="avatar-stage">
-            <div class="talk-bubble">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <div id="mascot" class="robot-head">
+                <div class="eyes-container">
+                    <div class="eye"></div><div class="eye"></div>
+                </div>
+                <div class="loader-ring"></div>
+                <div class="voice-wave">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
             </div>
-            
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="avatar-img" alt="AI Avatar">
         </div>
 
-        <div class="prompts-container">
-            <button class="prompt-btn">Привет, что ты можешь рассказать про колледж?</button>
-            <button class="prompt-btn">Сколько этажей и кабинетов?</button>
-            <button class="prompt-btn">Сколько специальностей и лет обучения?</button>
-            <button class="prompt-btn">Расскажи какие есть специальности?</button>
-            <button class="prompt-btn">Мероприятия для студентов?</button>
-            <button class="prompt-btn">Спасибо за ответ!</button>
+        <div class="chat-box" id="chat-box">
+            <div class="msg ai">Привет! Я Инти. Чем могу помочь? 🤖</div>
         </div>
 
+        <div class="prompts-scroll">
+            <button class="prompt-btn" onclick="sendPrompt(this)">Расскажи про колледж</button>
+            <button class="prompt-btn" onclick="sendPrompt(this)">Специальности</button>
+            <button class="prompt-btn" onclick="sendPrompt(this)">Стоимость</button>
+            <button class="prompt-btn" onclick="sendPrompt(this)">Как поступить?</button>
+        </div>
+
+        <div class="input-wrapper">
+            <input type="text" id="inp" class="input-field" placeholder="Ваш вопрос..." onkeypress="if(event.key==='Enter') send()">
+            <button class="send-btn" onclick="send()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
     </main>
-<div class="sidebar-handle" id="sidebar-btn"></div>
 
 <script>
+    const SERVER_URL = "http://127.0.0.1:8000";
+    const mascotDiv = document.getElementById('mascot');
+    const chatBox = document.getElementById('chat-box');
+    const inp = document.getElementById('inp');
     const sidebar = document.getElementById("sidebar");
-const btn = document.getElementById("sidebar-btn");
+    const sidebarBtn = document.getElementById("sidebar-btn");
+    const btnIcon = sidebarBtn.querySelector("i");
 
-btn.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-});
+    // Логика открытия меню
+    sidebarBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        // Менять стрелочку
+        if(sidebar.classList.contains("open")) {
+            btnIcon.classList.replace("fa-chevron-right", "fa-chevron-left");
+        } else {
+            btnIcon.classList.replace("fa-chevron-left", "fa-chevron-right");
+        }
+    });
+
+    // Закрыть меню при клике вне его (на мобильном)
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            if (!sidebar.contains(e.target) && !sidebarBtn.contains(e.target)) {
+                sidebar.classList.remove("open");
+                btnIcon.classList.replace("fa-chevron-left", "fa-chevron-right");
+            }
+        }
+    });
+
+    function setMascotState(state) {
+        mascotDiv.classList.remove('state-thinking', 'state-speaking');
+        if (state === 'thinking') mascotDiv.classList.add('state-thinking');
+        if (state === 'speaking') mascotDiv.classList.add('state-speaking');
+    }
+
+    async function send() {
+        const text = inp.value.trim();
+        if (!text) return;
+        addMsg(text, 'user');
+        inp.value = '';
+        processRequest(text);
+    }
+
+    function sendPrompt(btn) {
+        const text = btn.innerText;
+        addMsg(text, 'user');
+        processRequest(text);
+    }
+
+    async function processRequest(text) {
+        setMascotState('thinking');
+        try {
+            const respText = await fetch(`${SERVER_URL}/chat`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text })
+            });
+            if (!respText.ok) throw new Error("Server error");
+            const data = await respText.json();
+            addMsg(data.text, 'ai');
+            await streamAudio(data.text);
+        } catch (e) {
+            console.error(e);
+            addMsg("Ошибка сервера...", 'ai');
+            setMascotState('idle');
+        }
+    }
+
+    async function streamAudio(text) {
+        try {
+            const respAudio = await fetch(`${SERVER_URL}/tts`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            });
+            const blob = await respAudio.blob();
+            const url = URL.createObjectURL(blob);
+            const audio = new Audio(url);
+            setMascotState('speaking');
+            audio.onended = () => setMascotState('idle');
+            audio.play();
+        } catch (e) {
+            console.error(e);
+            setMascotState('idle');
+        }
+    }
+
+    function addMsg(text, type) {
+        const div = document.createElement('div');
+        div.className = `msg ${type}`;
+        div.innerText = text;
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
 </script>
+
 </body>
 </html>
